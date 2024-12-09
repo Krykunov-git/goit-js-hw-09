@@ -64,9 +64,11 @@ const images = [
   },
 ];
 
-const listEl = document.querySelector(".gallery");
+const listEl = document.querySelector('.gallery');
 
-const itemsEl = images.map(({ preview, original, description }) => `
+const itemsEl = images
+  .map(
+    ({ preview, original, description }) => `
     <li class="gallery-item">
   <a class="gallery-link" href=${original}>
     <img
@@ -76,11 +78,15 @@ const itemsEl = images.map(({ preview, original, description }) => `
     />
   </a>
 </li>
-`).join("");
+`
+  )
+  .join('');
 
 listEl.insertAdjacentHTML(`beforeend`, itemsEl);
 
-
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-const lightbox = new SimpleLightbox('.gallery a', {captionsData:'alt', captionDelay:250});
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
